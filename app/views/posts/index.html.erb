@@ -1,0 +1,33 @@
+<div class="header">
+  <div class="container">
+    <h1>threadly</h1>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+
+    <!-- form goes here -->
+
+    <%= form_for(@new_post) do |f| %>
+      <div class="field">
+        <%= f.label :post %>
+        <%= f.text_area :comment, :placeholder => "Comment..." %>
+      </div>
+
+      <div>
+        <%= f.submit "Post", :class => :btn%>
+      </div>
+
+    <% end %>
+
+    <ul class="comments">
+      <% @all_posts.each do |p| %>
+        <li><%= p.comment %></li>
+      <% end %>
+      <li>have you felt it?</li>
+      <li>there has been an awakening.</li>
+    </ul>
+
+  </div>
+</div>
